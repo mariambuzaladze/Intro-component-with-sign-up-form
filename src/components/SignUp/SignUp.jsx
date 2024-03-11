@@ -11,7 +11,8 @@ export default function SignUp() {
       <div className="button">
         <button>CLAIM YOUR FREE TRIAL</button>
         <p className="button-text">
-          By clicking the button, you are agreeing to our Terms and Services
+          By clicking the button, you are agreeing to our
+          <span className="terms"> Terms and Services</span>
         </p>
       </div>
     </div>
