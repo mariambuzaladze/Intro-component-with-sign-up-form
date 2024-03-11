@@ -5,3 +5,23 @@ input {
   border: solid 1px #dedede;
   background-color: #fff;
 }
+
+.input {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.error-text {
+  display: none;
+}
+
+.error-active {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  font-style: italic;
+  color: #ff7979;
+}

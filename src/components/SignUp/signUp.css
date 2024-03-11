@@ -27,6 +27,12 @@ button {
   letter-spacing: 1px;
   text-align: center;
   color: #fff;
+  cursor: pointer;
+  transform: 0.4s;
+}
+
+button:hover {
+  background-color: #77e2b3;
 }
 
 .button-text {
@@ -45,6 +51,6 @@ button {
 @media screen and (min-width: 1440px) {
   .sign-up {
     padding: 40px;
-    gap: 42px;
+    gap: 38px;
   }
 }
