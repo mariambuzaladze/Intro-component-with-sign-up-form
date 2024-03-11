@@ -13,13 +13,15 @@ export default function Intro() {
         </p>
       </div>
 
-      <div className="try">
-        <p className="try-text">
-          Try it free 7 days <span>then $20/mo. thereafter</span>
-        </p>
-      </div>
+      <div className="signing">
+        <div className="try">
+          <p className="try-text">
+            Try it free 7 days <span>then $20/mo. thereafter</span>
+          </p>
+        </div>
 
-      <SignUp />
+        <SignUp />
+      </div>
     </div>
   );
 }
