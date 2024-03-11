@@ -4,10 +4,10 @@ import Input from "../Input/Input";
 export default function SignUp() {
   return (
     <div className="sign-up">
-      <Input />
-      <Input />
-      <Input />
-      <Input />
+      <Input placeholder="First Name" />
+      <Input placeholder="Second Name" />
+      <Input placeholder="Email Address" />
+      <Input placeholder="Password" />
       <div className="button">
         <button>CLAIM YOUR FREE TRIAL</button>
         <p className="button-text">
