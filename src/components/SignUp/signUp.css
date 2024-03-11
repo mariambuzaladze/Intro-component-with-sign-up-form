@@ -41,3 +41,10 @@ button {
   color: #ff7979;
   font-weight: bold;
 }
+
+@media screen and (min-width: 1440px) {
+  .sign-up {
+    padding: 40px;
+    gap: 42px;
+  }
+}
