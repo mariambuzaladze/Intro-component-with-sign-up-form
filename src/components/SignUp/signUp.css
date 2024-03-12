@@ -48,6 +48,29 @@ button:hover {
   font-weight: bold;
 }
 
+.input {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+}
+
+.error-active {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  font-style: italic;
+  color: #ff7979;
+}
+
+.error-icon {
+  position: absolute;
+  left: 90%;
+  top: 18%;
+}
+
 @media screen and (min-width: 1440px) {
   .sign-up {
     padding: 40px;

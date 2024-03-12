@@ -1,74 +1,105 @@
 import "./signUp.css";
 import Input from "../Input/Input";
-import Error from "/images/icon-error.svg";
 import { useState } from "react";
+import ErrorIcon from "/images/icon-error.svg";
 
 export default function SignUp() {
-  const [firstName, setFirstName] = useState({
-    value: "",
-    className: "error-text",
-  });
-  const [secondName, setSecondName] = useState({
-    value: "",
-    className: "error-text",
-  });
-  const [email, setEmail] = useState({ value: "", className: "error-text" });
-  const [password, setPassword] = useState({
-    value: "",
-    className: "error-text",
-  });
+  const [firstName, setFirstName] = useState("");
+  const [firstNameError, setFirstNameError] = useState(false);
+  const [secondName, setSecondName] = useState("");
+  const [secondNameError, setSecondNameError] = useState(false);
+  const [email, setEmail] = useState("");
+  const [emailError, setEmailNameError] = useState(false);
+  const [password, setPassword] = useState("");
+  const [passwordError, setPasswordError] = useState(false);
 
-  const displayError = (event, setState) => {
-    let value = event.target.value.trim();
-    if (value.length === 0) {
-      setState({ value: Error, className: "error-active" });
+  const handleSubmit = (event) => {
+    if (firstName.length === 0) {
+      setFirstNameError(true);
     } else {
-      setState({ value: "", className: "error-text" });
+      setFirstNameError(false);
     }
-  };
 
-  const displayErrorEmail = (event, setState) => {
-    let value = event.target.value.trim();
-    if (value.length === 0 || !value.split("").includes("@")) {
-      setState({ value: Error, className: "error-active" });
+    if (secondName.length === 0) {
+      setSecondNameError(true);
     } else {
-      setState({ value: "", className: "error-text" });
+      setSecondNameError(false);
+    }
+
+    if (password.length === 0) {
+      setPasswordError(true);
+    } else {
+      setPasswordError(false);
+    }
+
+    if (!email.includes("@") || email.length === 0) {
+      setEmailNameError(true);
+    } else {
+      setEmailNameError(false);
     }
   };
 
   return (
     <div className="sign-up">
-      <Input
-        id="1"
-        placeholder="First Name"
-        text="First Name cannot be empty"
-        onChange={(event) => displayError(event, setFirstName)}
-        className={firstName.className}
-      />
-      <Input
-        id="2"
-        placeholder="Second Name"
-        text="Second Name cannot be empty"
-        onChange={(event) => displayError(event, setSecondName)}
-        className={secondName.className}
-      />
-      <Input
-        id="3"
-        placeholder="Email Address"
-        text="Looks like this is not an email"
-        onChange={(event) => displayErrorEmail(event, setEmail)}
-        className={email.className}
-      />
-      <Input
-        id="4"
-        placeholder="Password"
-        text="Password cannot be empty"
-        onChange={(event) => displayError(event, setPassword)}
-        className={password.className}
-      />
+      <div className="input">
+        <Input
+          id="1"
+          placeholder="First Name"
+          onChange={(event) => setFirstName(event.target.value.trim())}
+        />
+
+        {firstNameError ? (
+          <>
+            <img src={ErrorIcon} alt="Error" className="error-icon" />
+            <p className="error-active">"First Name cannot be empty"</p>
+          </>
+        ) : null}
+      </div>
+
+      <div className="input">
+        <Input
+          id="2"
+          placeholder="Second Name"
+          onChange={(event) => setSecondName(event.target.value.trim())}
+        />
+        {secondNameError ? (
+          <>
+            <img src={ErrorIcon} alt="Error" className="error-icon" />
+            <p className="error-active">"Second Name cannot be empty"</p>
+          </>
+        ) : null}
+      </div>
+
+      <div className="input">
+        <Input
+          id="3"
+          placeholder="Email Address"
+          onChange={(event) => setEmail(event.target.value.trim())}
+        />
+        {emailError ? (
+          <>
+            <img src={ErrorIcon} alt="Error" className="error-icon" />
+            <p className="error-active">"Looks like this is not an email"</p>
+          </>
+        ) : null}
+      </div>
+
+      <div className="input">
+        <Input
+          id="4"
+          placeholder="Password"
+          onChange={(event) => setPassword(event.target.value.trim())}
+        />
+        {passwordError ? (
+          <>
+            <img src={ErrorIcon} alt="Error" className="error-icon" />
+            <p className="error-active">"Password cannot be empty"</p>
+          </>
+        ) : null}
+      </div>
 
       <div className="button">
-        <button>CLAIM YOUR FREE TRIAL</button>
+        <button onClick={handleSubmit}>CLAIM YOUR FREE TRIAL</button>
         <p className="button-text">
           By clicking the button, you are agreeing to our
           <span className="terms"> Terms and Services</span>
