@@ -45,13 +45,14 @@ export default function SignUp() {
         <Input
           id="1"
           placeholder="First Name"
+          value={firstName}
           onChange={(event) => setFirstName(event.target.value.trim())}
         />
 
         {firstNameError ? (
           <>
             <img src={ErrorIcon} alt="Error" className="error-icon" />
-            <p className="error-active">"First Name cannot be empty"</p>
+            <p className="error-active">First Name cannot be empty</p>
           </>
         ) : null}
       </div>
@@ -60,12 +61,13 @@ export default function SignUp() {
         <Input
           id="2"
           placeholder="Second Name"
+          value={secondName}
           onChange={(event) => setSecondName(event.target.value.trim())}
         />
         {secondNameError ? (
           <>
             <img src={ErrorIcon} alt="Error" className="error-icon" />
-            <p className="error-active">"Second Name cannot be empty"</p>
+            <p className="error-active">Second Name cannot be empty</p>
           </>
         ) : null}
       </div>
@@ -74,12 +76,13 @@ export default function SignUp() {
         <Input
           id="3"
           placeholder="Email Address"
+          value={email}
           onChange={(event) => setEmail(event.target.value.trim())}
         />
         {emailError ? (
           <>
             <img src={ErrorIcon} alt="Error" className="error-icon" />
-            <p className="error-active">"Looks like this is not an email"</p>
+            <p className="error-active">Looks like this is not an email</p>
           </>
         ) : null}
       </div>
@@ -88,12 +91,13 @@ export default function SignUp() {
         <Input
           id="4"
           placeholder="Password"
+          value={password}
           onChange={(event) => setPassword(event.target.value.trim())}
         />
         {passwordError ? (
           <>
             <img src={ErrorIcon} alt="Error" className="error-icon" />
-            <p className="error-active">"Password cannot be empty"</p>
+            <p className="error-active">Password cannot be empty</p>
           </>
         ) : null}
       </div>
